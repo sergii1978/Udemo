@@ -11,32 +11,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.text_field :image %>
+  <div class="form-group">
+    <%= form.text_field :image, placeholder: "Изображение", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :video, style: "display: block" %>
-    <%= form.text_field :video %>
+  <div class="form-group">
+    <%= form.text_field :video, placeholder: "Видео", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= form.text_field :title, placeholder: "Название", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :star, style: "display: block" %>
-    <%= form.number_field :star %>
+  <div class="form-group">
+    <%= form.number_field :star, placeholder: "Рейтинг", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="field">
+    <%= form.text_area :description, placeholder: "Описание", length: "800", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+  <button type="submit" class="btn btn-primary">Сохранить</button>
+
+  <%= link_to "Открыть все курсы", courses_path, class: "btn btn-secondary" %>
 <% end %>
