@@ -1,8 +1,37 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Courses</h1>
+<h1>Курсы</h1>
 
-<div id="courses">
+<%= link_to "Добавить курс", new_course_path, class: "btn btn-primary" %>
+
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+    <tr>
+      <td><%= link_to course.title, course %></td>
+      <td>
+        <%= link_to edit_course_path(course) do %>
+          <i class="fa-solid fa-pencil"></i>
+        <% end %>
+
+        <%= link_to course, method: :delete, data: {confirm: 'Are you sure?'} do %>
+          <i class="fa-solid fa-trash-can"></i>
+        <% end %>
+        </td>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<!-- <div id="courses">
   <% @courses.each do |course| %>
     <%= render course %>
     <p>
@@ -10,5 +39,5 @@
     </p>
   <% end %>
 </div>
+ -->
 
-<%= link_to "New course", new_course_path %>
